@@ -1,12 +1,11 @@
-<div id='shorten'>
+<div id="shorten">
   <h1>Shorten</h1>
-  <form>
-    <input type='text' name='link'>
-    <input type='submit' name='shorten' ng-click='shortenLink(data)'>
-  </form>
+  <!-- <form ng-submit="shortenLink({url: linkToShorten})"> -->
+    <input type="text" name="link" ng-model="linkToShorten">
+    <input type="button" ng-click="shortenLink({url: linkToShorten})" name="shorten">
+  <!-- </form> -->
   <ul>
-    <li ng-repeat='hotlinks in data'></li>
+    <li ng-repeat="hotlinks in data.shortenedLinks">{{ hotlinks.code }}</li>
   </ul>
 </div>
-
 
