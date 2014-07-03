@@ -6,8 +6,8 @@
     </ul>
   </nav>
   <!-- <form ng-submit="shortenLink({url: linkToShorten})"> -->
-    <input type="text" name="link" ng-model="linkToShorten">
-    <input type="button" ng-click="shortenLink({url: linkToShorten})" name="shorten">
+    <input type="url" name="link" ng-model="linkToShorten">
+    <input type="button" ng-click="shortenLink({url: linkToShorten})" name="shorten" value="Submit">
   <!-- </form> -->
   <ul>
     <li class='link' ng-repeat="hotlinks in data.shortenedLinks">{{ hotlinks.code }}</li>
