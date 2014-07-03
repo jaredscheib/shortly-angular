@@ -1,10 +1,14 @@
 <div id='links'>
   <h1>links</h1>
+  <nav class='navigation'>
+    <ul>
+    <li><a href='/#/shorten'>Make Links</a></li>
+    </ul>
+  </nav>
   <ul>
-    <li ng-repeat='link in data.links'> {{ 'Website: ' + link.title + ' &mdash; URL: ' + link.url + ' &mdash; ' + 'Shortcode: ' + link.code }}<div><a href="
-    http://localhost:8000/api/links/{{ link.code }}"> {{link.code}} </a></div></li>
+    <li class='link' ng-repeat='link in data.links'> {{ link.title + ' &mdash; URL: ' + link.url + ' &mdash; ' }}<div><a href="
+    http://localhost:8000/api/links/{{ link.code }}"> Shortcode: {{link.code}} </a></div></li>
   </ul>
-  <a href='/#/shorten'>Make shortened links!</a>
 </div>
 
 

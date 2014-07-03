@@ -1,12 +1,16 @@
 <div id="shorten">
   <h1>Shorten</h1>
+  <nav class='navigation'>
+    <ul>
+    <li><a href='/#/links'>Links</a></li>
+    </ul>
+  </nav>
   <!-- <form ng-submit="shortenLink({url: linkToShorten})"> -->
     <input type="text" name="link" ng-model="linkToShorten">
     <input type="button" ng-click="shortenLink({url: linkToShorten})" name="shorten">
   <!-- </form> -->
   <ul>
-    <li ng-repeat="hotlinks in data.shortenedLinks">{{ hotlinks.code }}</li>
+    <li class='link' ng-repeat="hotlinks in data.shortenedLinks">{{ hotlinks.code }}</li>
   </ul>
-  <a href='/#/links'>See shortened links!</a>
 </div>
 
