@@ -1,6 +1,12 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='shorten'>
+  <h1>Shorten</h1>
+  <form>
+    <input type='text' name='link'>
+    <input type='submit' name='shorten' ng-click='shortenLink(data)'>
+  </form>
+  <ul>
+    <li ng-repeat='hotlinks in data'></li>
+  </ul>
 </div>
 
 
