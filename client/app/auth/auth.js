@@ -6,7 +6,8 @@ angular.module('shortly.auth', [])
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 
-  $scope.signin = function () {
+  $scope.signin = function (isValid) {
+    if( !isValid ) { return; }
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
@@ -18,7 +19,7 @@ angular.module('shortly.auth', [])
   };
 
   $scope.signup = function (isValid) {
-    if( !isValid ) { return; };
+    if( !isValid ) { return; }
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
