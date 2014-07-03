@@ -14,7 +14,7 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
-        console.error(error);
+        alert("No such user");
       });
   };
 
