@@ -1,9 +1,10 @@
 <div id='signup'>
   <h1>signup</h1>
-  <form name="signupForm" ng-submit='signup(signupForm.$valid)' novalidate>
-    <input type='text' ng-model='user.username' required>
-    <input type="password" ng-model='user.password' required>
-    <button>signup</button>
+  <form name='signupForm' ng-submit='signup(signupForm.$valid)' novalidate>
+    <input type='text' ng-model='user.username' ng-minlength='3' ng-maxlength='20' required>
+    <input type='password' ng-model='user.password' ng-minlength='8' ng-maxlength='20' required>
+    <button ng-disabled='signupForm.$invalid'>signup</button>
+    <p ng-show='signupForm.$invalid'>Must enter valid username and password</p>
   </form>
   <a href="#/signin">Already have an account? Signin ...</a>
 </div>
