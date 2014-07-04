@@ -6,7 +6,8 @@
     </ul>
   </nav>
   <ul>
-    <li class='link' ng-repeat='link in data.links'> {{ link.title + ' &mdash; URL: ' + link.url + ' &mdash; ' }}<div><a href="
+    <input ng-model='searchFilter.title' type='input'>
+    <li class='link' ng-repeat='link in data.links | filter:searchFilter | orderBy:"-visits"'> "{{ link.title + ' &mdash; URL: ' + link.url + ' &mdash; ' + link.visits }}<div><a href="
     http://localhost:8000/api/links/{{ link.code }}"> Shortcode: {{link.code}} </a></div></li>
   </ul>
 </div>
