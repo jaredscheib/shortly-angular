@@ -5,10 +5,10 @@
     <li><a href='/#/links'>Links</a></li>
     </ul>
   </nav>
-  <!-- <form ng-submit="shortenLink({url: linkToShorten})"> -->
-    <input type="url" name="link" ng-model="linkToShorten">
-    <input type="button" ng-click="shortenLink({url: linkToShorten})" name="shorten" value="Submit">
-  <!-- </form> -->
+  <form name="linkInput" ng-submit="shortenLink({url: linkToShorten})" novalidate>
+    <input type="url" ng-model="linkToShorten" required>
+    <button ng-disabled="linkInput.$invalid" name="shorten">Shorten!</button>
+  </form>
   <ul>
     <li class='link' ng-repeat="hotlinks in data.shortenedLinks">{{ hotlinks.code }}</li>
   </ul>
